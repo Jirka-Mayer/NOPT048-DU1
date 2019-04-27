@@ -28,7 +28,7 @@ solve;
 
 printf "#OUTPUT: %d\\n", m;
 for {i in 1..N} {
-    printf "v_%d: %d\\n", i, x[i];
+    printf "v_%d: %d\\n", i-1, x[i];
 }
 printf "#OUTPUT END\\n";
 
