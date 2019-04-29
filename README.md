@@ -24,6 +24,8 @@ Každý vrchol `v_i` dostane celočíselnou nezápornou proměnnou `x[i]` (index
 
 Navíc pro každou hranu `v_i --> v_j` musí platit `x[i] < x[j]`, což lze zajistit podmínkou `x[i] <= x[j] - 1`.
 
+Úloha nebude mít řešení, pokud je v grafu cyklus. Navíc, aby se program nezacyklil, je potřeba omezit pořadí přiřazené vrcholům nějakou dobrou konstantou (např. počet vrcholů), aby byl prohledávaný prostor konečný (a menší).
+
 
 Krátké cykly (úloha 2)
 ----------------------
@@ -31,3 +33,5 @@ Krátké cykly (úloha 2)
 > Indexy vrcholů v glpsolu jsou opět od 1, ale v pythonu a výstupu od 0
 
 Nejprve potřebuji nějak označit hrany, které se mají odebrat, takže pro každou hranu `(i, j)` vytvořím booleovskou proměnnou `x["i_j"]`. Jelikož chci mít co nejmenší cenu odebraných hran, tak budu minimalizovat součin těchto proměnných s jejich váhami. Odebrání nějaké hrany cyklu vynutíme analogií disjunkce `x[_] + x[_] + x[_] >= 1` pro všechny hrany na cyklu. Cykly (3,4-cykly) najdeme algoritmicky prohledáváním do šířky v pythonu.
+
+Úloha bude mít nějaké řešení pokaždé, protože vždy máme možnost prostě odebrat všechny hrany. Takové řešení je určitě přípustné, protože se splní všechny disjunkce a prázdné disjunkce nemáme.
