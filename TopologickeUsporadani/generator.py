@@ -9,7 +9,7 @@ edges = []
 for i in range(edge_count):
     edges.append(map(
         int,
-        re.match(r"(\d+) --> (\d+)", input()).groups()
+        re.match(r"\s*(\d+)\s*-->\s*(\d+)\s*", input()).groups()
     ))
 
 template = """

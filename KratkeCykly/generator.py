@@ -9,7 +9,7 @@ weighted_edges = []
 for i in range(edge_count):
     weighted_edges.append(tuple(map(
         int,
-        re.match(r"(\d+) --> (\d+) \((\d+)\)", input()).groups()
+        re.match(r"\s*(\d+)\s*-->\s*(\d+)\s+\((\d+)\)\s*", input()).groups()
     )))
 edges = [(i, j) for (i, j, _) in weighted_edges]
 
