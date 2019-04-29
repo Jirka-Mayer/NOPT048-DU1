@@ -28,15 +28,6 @@ Navíc pro každou hranu `v_i --> v_j` musí platit `x[i] < x[j]`, což lze zaji
 Krátké cykly (úloha 2)
 ----------------------
 
-TODO
+> Indexy vrcholů v glpsolu jsou opět od 1, ale v pythonu a výstupu od 0
 
-
-Žádné cykly (pozorování)
-------------------------
-
-
-Řešení vzniklo omylem při pokusu o řešení problému krátkých cyklů, bez BFS v generátoru LP.
-
-*Zadání:* Máme graf s ohodnocenými hranami. Chceme najít co nejlevnější podmnožinu hran, po jejímž odebrání dostaneme DAG.
-
-*Převedení na LP:* vezmu topolog uspořádání a umožním porušení podmínek
+Nejprve potřebuji nějak označit hrany, které se mají odebrat, takže pro každou hranu `(i, j)` vytvořím booleovskou proměnnou `x["i_j"]`. Jelikož chci mít co nejmenší cenu odebraných hran, tak budu minimalizovat součin těchto proměnných s jejich váhami. Odebrání nějaké hrany cyklu vynutíme analogií disjunkce `x[_] + x[_] + x[_] >= 1` pro všechny hrany na cyklu. Cykly (3,4-cykly) najdeme algoritmicky prohledáváním do šířky v pythonu.
