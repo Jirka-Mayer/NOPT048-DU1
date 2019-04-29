@@ -1,6 +1,6 @@
 param N := 3;
 
-var x{i in 1..N} >= 0;
+var x{i in 1..N} >= 0, <= N; # upper bound helps if no solution exists
 var m >= 0;
 
 minimize obj: m;

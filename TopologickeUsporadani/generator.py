@@ -15,7 +15,7 @@ for i in range(edge_count):
 template = """
 param N := @N;
 
-var x{i in 1..N} >= 0;
+var x{i in 1..N} >= 0, <= N; # upper bound helps if no solution exists
 var m >= 0;
 
 minimize obj: m;
